@@ -58,9 +58,8 @@ void draw() {
   if (ballY < 0 || ballY > height) {
     ballSpeedY *= -1.0;                // multiply by -1 = reverse direction!
   }
-
-  // check if ball has gone past the sides 
-  // if so update score and respawn the ball
+  
+  // update score and respawn the ball
   if (ballX < 0) {                     // if off the left side...
     scoreP2 += 1;                      // add to opponent's score
     newBall();                         // new ball using custom function (at the bottom)
