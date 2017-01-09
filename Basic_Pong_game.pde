@@ -55,8 +55,6 @@ void draw() {
   // update paddle position using mouse for player 1
   // (player 2 is controlled by the keyboard - code is below)
   p1y = mouseY;
-
-  // check for collision with the top/bottom of the screen, bounce
   if (ballY < 0 || ballY > height) {
     ballSpeedY *= -1.0;                // multiply by -1 = reverse direction!
   }
@@ -71,12 +69,6 @@ void draw() {
     scoreP1 += 1;
     newBall();
   }
-  
-  // check for collision with paddle
-  // 1. tests if ball is at the paddle on the R/L
-  // 2. tests if ball is below the top of the paddle
-  // 3. tests if the ball is above the bottom of the paddle
-  // if so, reverse the ball's direction
   if (ballX - ballSize/2 <= paddleWidth && ballY > p1y &&  ballY < p1y + paddleHeight) {
     ballSpeedX *= -1;
   }
@@ -101,10 +93,6 @@ void keyPressed() {
     }
   }
 }
-
-
-// a custom "function" to create a new ball
-// this let's us re-use code more easily
 void newBall() {
   ballX = width/2;
   ballY = height/2;
