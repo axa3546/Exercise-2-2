@@ -1,3 +1,4 @@
+
 class JitterBug {
   
   float x;
